@@ -25,3 +25,24 @@ function getComputerChoice(){
 }
 
 // console.log(getComputerChoice())
+
+
+// Get human choice:
+
+/*
+Start
+Ask human to write an option
+Create that option to lower case
+Return human choice
+End
+*/
+
+function getHumanChoice(){
+  const humanChoice = prompt(`
+    Write down one of these:
+    Rock - Paper - Scissor`)
+  const lower = humanChoice.toLowerCase()
+  return lower
+}
+
+console.log(getHumanChoice())
