@@ -28,3 +28,28 @@ function getComputerchoice(){
 
 // getComputerchoice()
 
+/*
+Se pude al humano entrar una opcion
+Esa opcion se convierte en minuscula
+Si el humano introdujo roca
+  Se muestra rock
+Si el humano introdujo papel
+  Se muestra papel
+Sino Se muestra tijeras
+*/
+
+function getHumaChoice(){
+  let human = prompt(`
+    Elije una opcion:
+   Rock - Paper - Scissors`);
+   let lower = human.toLowerCase();
+   if (lower === "rock"){
+    console.log(ROCK)
+   } else if (lower === "paper") {
+    console.log(PAPER)
+   } else {
+    console.log(SCISSORS)
+   }
+}
+
+getHumaChoice()
