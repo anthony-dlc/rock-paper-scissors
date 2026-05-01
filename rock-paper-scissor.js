@@ -1,4 +1,3 @@
-// GET COMPUTER CHOICE:
 
 function getComputerChoice() {
   const computerChoosing = Math.floor(Math.random() * 3) + 1;
@@ -11,7 +10,6 @@ function getComputerChoice() {
   }
 }
 
-// GET HUMAN CHOICE:
 
 function getHumanChoice() {
   const humanChoosing = prompt(`
@@ -21,58 +19,29 @@ function getHumanChoice() {
   return lowerHumanChoice;
 }
 
-// HOLE GAME:
 
 function playGame() {
-  // SCORE:
 
   let humanScore = 0;
   let computerScore = 0;
 
-  // ROUNDS: 
-
-
-  // OPTION WITH LOOPS:
-
-  // for (let i = 1; i <= 5; i++) {
-  //   // EACH ROUND:
-
-  //   // ASSIGN BOTH PARTICIPANT'S CHOICES AND
-  //   // CALLS BOTH PARTICIPANT'S CHOICES
-
-  //   const humanSelection = getHumanChoice();
-  //   const computerSelection = getComputerChoice();
-
-  //   //COMPARE BOTH CHOICES
-  //   playRound(humanSelection, computerSelection);
-
-  // }
-
-  // OPTION WITH FUNCTION:
-
-  function loop(x){
-    if (x >= 5){
+  // Loop
+  function gameRounds(roundStart){
+    if (roundStart >= 5){
       return
     }
-     // ASSIGN BOTH PARTICIPANT'S CHOICES AND
-     // CALLS BOTH PARTICIPANT'S CHOICES
 
      const humanSelection = getHumanChoice();
      const computerSelection = getComputerChoice();
 
-     //COMPARE BOTH CHOICES
      playRound(humanSelection, computerSelection);
-     loop(x + 1)
+
+     gameRounds(roundStart + 1)
   }
-  loop(0)
-
-
-  // ONE ROUND COMPARISON:
+  gameRounds(0)
 
   function playRound(humanChoice, computerChoice) {
-    // COMPARISON:
 
-    // HUMAN VICTORY:
     if (humanChoice === "rock" && computerChoice === "scissor") {
       humanScore++;
       alert(`
@@ -93,7 +62,6 @@ function playGame() {
       Computer: ${computerScore}`);
     }
 
-    // COMPUTER VICTORY:
     else if (computerChoice === "rock" && humanChoice === "scissor") {
       computerScore++;
       alert(`
@@ -114,14 +82,11 @@ function playGame() {
       Computer: ${computerScore}`);
     }
 
-    // BOTH DIVIDE:
     else {
       alert(`
       Human: "${humanChoice}" and Computer: "${computerChoice}" are the same, no one has won this round`);
     }
   }
-
-  // SHOW WINNER:
 
   if (humanScore > computerScore) {
     alert(`Human win: ${humanScore}, computer lose: ${computerScore}`);
@@ -135,8 +100,6 @@ function playGame() {
 
 }
 
-//CALL HOLE GAME:
-
 playGame();
 
-// END
+ 
