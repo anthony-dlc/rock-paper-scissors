@@ -9,6 +9,8 @@
 
 // hay una funcion que compara mi eleccion contra la de la computadore, agrega el punto ganador y muestra el resultado
 
+// HUMAN CHOICE: 
+
 const container = document.querySelector(".container")
 const rock = document.createElement("button")
 rock.textContent = "ROCK"
@@ -25,3 +27,16 @@ scissor.value = "scissor"
 container.appendChild(rock)
 container.appendChild(paper)
 container.appendChild(scissor)
+
+// COMPUTER CHOICE:
+
+function getComputerChoice(){
+  let computerChoice = Math.floor(Math.random() * 3) + 1
+  if (computerChoice === 1){
+    return "rock"
+  } else if (computerChoice === 2){
+    return "paper"
+  } else {
+    return "scissor"
+  }
+}
