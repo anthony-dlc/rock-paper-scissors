@@ -40,3 +40,22 @@ function getComputerChoice(){
     return "scissor"
   }
 }
+
+
+// Score
+
+let hScore = 0
+let cScore = 0
+
+const scoreBox = document.querySelector(".score")
+const selections = document.createElement("p")
+const humanScore = document.createElement("p")
+const computerScore = document.createElement("p")
+humanScore.textContent = `Human score: ${hScore}`
+computerScore.textContent = `Computer Score: ${cScore}`
+
+selections.textContent = "Selections"
+
+scoreBox.appendChild(selections)
+scoreBox.appendChild(humanScore)
+scoreBox.appendChild(computerScore)
