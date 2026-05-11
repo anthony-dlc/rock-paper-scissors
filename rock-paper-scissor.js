@@ -1,5 +1,4 @@
 // rock paper and Scissor
-
 // tengo tres opciones: 3 botones
 // cada boton tiene el valor correspondiente al texto que tiene
 
@@ -81,23 +80,56 @@ function playRound(humanChoice, computerChoice) {
   }
 
   // COMPUTER WINS:
-
-  else if(computerChoice === "rock" && humanChoice === "scissor") {
+  else if (computerChoice === "rock" && humanChoice === "scissor") {
     cScore++;
     selections.textContent = `Computer: ${computerChoice} beats Human: ${humanChoice}`;
     humanScore.textContent = `Human score: ${hScore}`;
     computerScore.textContent = `Computer Score: ${cScore}`;
-  } else if(computerChoice === "paper" && humanChoice === "rock") {
+  } else if (computerChoice === "paper" && humanChoice === "rock") {
     cScore++;
     selections.textContent = `Computer: ${computerChoice} beats Human: ${humanChoice}`;
     humanScore.textContent = `Human score: ${hScore}`;
     computerScore.textContent = `Computer Score: ${cScore}`;
-  } else if(computerChoice === "scissor" && humanChoice === "paper") {
+  } else if (computerChoice === "scissor" && humanChoice === "paper") {
     cScore++;
     selections.textContent = `Computer: ${computerChoice} beats Human: ${humanChoice}`;
     humanScore.textContent = `Human score: ${hScore}`;
     computerScore.textContent = `Computer Score: ${cScore}`;
   } else {
-    selections.textContent = `Human: ${humanChoice} & Computer: ${computerChoice} are the same`
+    selections.textContent = `Human: ${humanChoice} & Computer: ${computerChoice} are the same`;
   }
+//   const body = document.querySelector("body");
+// const winner = document.createElement("p");
+// winner.textContent = "";
+// body.appendChild(winner);
+
+// if (hScore === 5) {
+//   winner.textContent = "Human has win";
+//   hScore = 0;
+//   cScore = 0;
+// }
+// if (cScore === 5) {
+//   winner.textContent = "Computer has win";
+//   hScore = 0;
+//   cScore = 0;
+// }
 }
+
+// EVENTS:
+
+rock.addEventListener("click", () => {
+  let computerChoice = getComputerChoice();
+  playRound(rock.value, computerChoice);
+});
+
+paper.addEventListener("click", () => {
+  let computerChoice = getComputerChoice();
+  playRound(paper.value, computerChoice);
+});
+
+scissor.addEventListener("click", () => {
+  let computerChoice = getComputerChoice();
+  playRound(scissor.value, computerChoice);
+});
+
+
