@@ -1,105 +1,27 @@
+// rock paper and Scissor
 
-function getComputerChoice() {
-  const computerChoosing = Math.floor(Math.random() * 3) + 1;
-  if (computerChoosing === 1) {
-    return "rock";
-  } else if (computerChoosing === 2) {
-    return "paper";
-  } else {
-    return "scissor";
-  }
-}
+// tengo tres opciones: 3 botones
+// cada boton tiene el valor correspondiente al texto que tiene
 
+// la computadora taambien tiene 3 opciones, pero la computadora debe elegir de no elige conciente, hay que hacerlo de manera random y asignarle cada numero un valor
 
-function getHumanChoice() {
-  const humanChoosing = prompt(`
-    Write down one option:
-    Rock, Paper, Scissor`);
-  const lowerHumanChoice = humanChoosing.toLowerCase();
-  return lowerHumanChoice;
-}
+// tengo un lugar donde se muestra y almacena la puntuacion
 
+// hay una funcion que compara mi eleccion contra la de la computadore, agrega el punto ganador y muestra el resultado
 
-function playGame() {
+const container = document.querySelector(".container")
+const rock = document.createElement("button")
+rock.textContent = "ROCK"
+rock.value = "rock"
 
-  let humanScore = 0;
-  let computerScore = 0;
+const paper = document.createElement("button")
+paper.textContent = "PAPER"
+paper.value = "paper"
 
-  // Loop
-  function gameRounds(roundStart){
-    if (roundStart >= 5){
-      return
-    }
+const scissor = document.createElement("button")
+scissor.textContent = "SCISSOR"
+scissor.value = "scissor"
 
-     const humanSelection = getHumanChoice();
-     const computerSelection = getComputerChoice();
-
-     playRound(humanSelection, computerSelection);
-
-     gameRounds(roundStart + 1)
-  }
-  gameRounds(0)
-
-  function playRound(humanChoice, computerChoice) {
-
-    if (humanChoice === "rock" && computerChoice === "scissor") {
-      humanScore++;
-      alert(`
-      Human: ${humanChoice} beats Computer: ${computerChoice}
-      Human: ${humanScore}
-      Computer: ${computerScore}`);
-    } else if (humanChoice === "paper" && computerChoice === "rock") {
-      humanScore++;
-      alert(`
-      Human: ${humanChoice} beats Computer: ${computerChoice}  
-      Human: ${humanScore}
-      Computer: ${computerScore}`);
-    } else if (humanChoice === "scissor" && computerChoice === "paper") {
-      humanScore++;
-      alert(`
-      Human: ${humanChoice} beats Computer: ${computerChoice}
-      Human: ${humanScore}
-      Computer: ${computerScore}`);
-    }
-
-    else if (computerChoice === "rock" && humanChoice === "scissor") {
-      computerScore++;
-      alert(`
-      Computer: ${computerChoice} beats Human: ${humanChoice}
-      Human: ${humanScore}
-      Computer: ${computerScore}`);
-    } else if (computerChoice === "paper" && humanChoice === "rock") {
-      computerScore++;
-      alert(`
-      Computer: ${computerChoice} beats Human: ${humanChoice}
-      Human: ${humanScore}
-      Computer: ${computerScore}`);
-    } else if (computerChoice === "scissor" && humanChoice === "paper") {
-      computerScore++;
-      alert(`
-      Computer: ${computerChoice} beats Human: ${humanChoice}
-      Human: ${humanScore}
-      Computer: ${computerScore}`);
-    }
-
-    else {
-      alert(`
-      Human: "${humanChoice}" and Computer: "${computerChoice}" are the same, no one has won this round`);
-    }
-  }
-
-  if (humanScore > computerScore) {
-    alert(`Human win: ${humanScore}, computer lose: ${computerScore}`);
-  } else if (computerScore > humanScore) {
-    alert(`Computer win: ${computerScore}, Human lose: ${humanScore}`);
-  } else {
-    alert(`Both divide:
-      Human: ${humanScore}
-      Computer: ${computerScore}`);
-  }
-
-}
-
-playGame();
-
- 
+container.appendChild(rock)
+container.appendChild(paper)
+container.appendChild(scissor)
